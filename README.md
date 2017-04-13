@@ -1,6 +1,6 @@
 # angularjs-popups-demo
 #### 医护微定制应用产品开发中的高级搜索面板
-#### A draft version of [AngularJS-popups-demo](https://github.com/JenifferWuUCLA/medical_AI_micro_customization).
+#### A draft version of [AngularJS-popups-demo](https://github.com/JenifferWuUCLA/angularjs-popups-demo).
 
 基于 AngularJS 的浮层组件，由 [artDialog](https://github.com/aui/artDialog) 演进而来。angular-popups 是一个严格遵循 AngularJS 架构与 web 标准的组件：
 
@@ -20,7 +20,7 @@ You'll need [`git`](http://git-scm.com/) and a web browser.
 Run the following command to check out a local copy of the code.
 
 ```shell
-git clone https://github.com/JenifferWuUCLA/medical_AI_micro_customization.git
+git clone https://github.com/JenifferWuUCLA/angularjs-popups-demo.git
 ```
 
 ## 使用
@@ -97,7 +97,7 @@ var app = angular.module('app', ['angular-popups']);
 * IE9+
 
 ## Running it
-Because we are pulling files from a CDN, we are going to need to run medical_AI_micro_customization from a web server. There are a few ways to do this, but one of the easiest ways is to use the npm package `serve`.
+Because we are pulling files from a CDN, we are going to need to run angularjs-popups-demo from a web server. There are a few ways to do this, but one of the easiest ways is to use the npm package `serve`.
 
 The steps are as follows:
 
@@ -106,4 +106,4 @@ The steps are as follows:
 3. Navigate to the `angularjs-popups-demo` directory from the command line and run `serve`.
 4. Go to [http://localhost:5000](http://localhost:5000) in your browser to see the application.
 
-![Main Page](https://github.com/JenifferWuUCLA/medical_AI_micro_customization/blob/master/image/Medical%20AI%20Search.png)
+![Main Page](https://github.com/JenifferWuUCLA/angularjs-popups-demo/blob/master/image/AngularJS-popups-demo.png)
