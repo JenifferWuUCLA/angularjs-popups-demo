@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>example</title>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="dist/angular-popups.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="src/css/ngDatepicker.css">
+
+    <!--<script>
+        angular.module('app', ['angular-popups']);
+    </script>-->
+
+    <!--<link rel="stylesheet" href="./css/show-source-code.css">-->
+</head>
+<body>
+<form id="boxid" class="form-inline mt-2 mt-md-0">
+<div class="input-group">
+    <input class="form-control mr-sm-2" ng-model="searchText" placeholder="Search" type="search" ng-change="search()" ng-click="dialog={open: true}"/>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-search"></span>
+    </span>
+</div>
+</form>
+
+<!--<button id="btn" style="display: none">打开对话框</button>-->
+<dialog ng-if="dialog.open" for="boxid" close="dialog.open=false" close-action="esc outerchick">
+    <div dialog-title><div style="color:darkgrey">Advanced search</div></div>
+    <div dialog-content>
+        <div ng-controller="RadioController">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <h5>Gender</h5>
+                    </td>
+                    <td style="align:right">
+                        <span><input type="radio" name="SGender" ng-change="RadioChange('Male')" ng-model="searchText" value="M" /> Male </span>
+                        <span><input type="radio" name="SGender" ng-change="RadioChange('Female')" ng-model="searchText" value="F" /> Female </span>
+                    </td>
+                </tr>
+            </table>
+
+            <pre ng-bind="searchText | json"></pre>
+        </div>
+
+        <div ng-controller="Ctrl as ctrl">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <h5>DOB</h5	>
+                    </td>
+                    <td style="align:right">
+                        <ng-datepicker ng-model="searchText" first-week-day-sunday="true" placeholder="Pick a date" format="MM/DD/YYYY" view-format="MM/DD/YYYY">
+                        </ng-datepicker>
+                    </td>
+                </tr>
+            </table>
+
+            <pre ng-bind="searchText | json"></pre>
+        </div>
+    </div>
+</dialog>
+
+
+<!--<script id="show-source-code" src="./js/show-source-code.js"></script>-->
+
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="src/js/ngDatepicker.js"></script>
+<script type="text/javascript">
+    var app = angular.module("app", ['angular-popups', 'jkuri.datepicker']);
+    app.controller("RadioController", function ($scope) {
+
+        $scope.Gender = "Male";
+
+        $scope.RadioChange = function (s) {
+            $scope.GenderSelected = s;
+        };
+    });
+
+    //var capp = angular.module('capp', ['jkuri.datepicker']);
+    app.controller('Ctrl', [function() {
+        var self = this;
+    }]);
+</script>
+
+</body>
+</html>
