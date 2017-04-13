@@ -1,4 +1,4 @@
-# angularjs-popups-demo
+# AngularJS-popups-demo
 #### 医护微定制应用产品开发中的高级搜索面板
 #### A draft version of [AngularJS-popups-demo](https://github.com/JenifferWuUCLA/angularjs-popups-demo).
 
