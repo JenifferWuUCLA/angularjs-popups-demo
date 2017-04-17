@@ -62,13 +62,14 @@
                         <h5>DOB</h5	>
                     </td>
                     <td style="align:right">
-                        <ng-datepicker ng-model="searchText" first-week-day-sunday="true" placeholder="Pick a date" format="MM/DD/YYYY" view-format="MM/DD/YYYY">
+                        <ng-datepicker ng-model="dobDate" ng-change="DateChange()" first-week-day-sunday="true" placeholder="Pick a date" format="MM/DD/YYYY" view-format="MM/DD/YYYY">
                         </ng-datepicker>
+                        <!--<input type="date" name="DOB" ng-model="example.value" first-week-day-sunday="true" placeholder="Pick a date" format="MM/DD/YYYY" view-format="MM/DD/YYYY">-->
                     </td>
                 </tr>
             </table>
 
-            <pre ng-bind="searchText | json"></pre>
+            <pre ng-bind="dobDate | json"></pre>
         </div>
     </div>
 </dialog>
@@ -90,10 +91,16 @@
         };
     });
 
-    //var capp = angular.module('capp', ['jkuri.datepicker']);
-    app.controller('Ctrl', [function() {
-        var self = this;
-    }]);
+    app.controller('Ctrl', function($scope) {
+        /*$scope.searchText = {
+         value: new Date(2013, 9, 22)
+         };*/
+
+        $scope.DateChange = function () {
+            alert($scope.dobDate);
+        };
+        //alert($scope.example.value);
+    });
 </script>
 
 </body>
